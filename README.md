@@ -61,6 +61,33 @@ WSF ships two components:
 
 ---
 
+## Dependencies
+
+The one‑shot installer below **already attempts to install dependencies** via your package manager. If you prefer to do it manually (or your distro isn’t supported by the script), use one of these:
+
+**Arch Linux**
+```bash
+sudo pacman -S --needed base-devel git meson ninja pkgconf python python-gobject gtk4 libadwaita libinput-tools
+```
+
+**Ubuntu / Debian**
+```bash
+sudo apt update
+sudo apt install -y build-essential git meson ninja-build pkg-config python3 python3-gi gir1.2-gtk-4.0 gir1.2-adw-1 libadwaita-1-0 libinput-tools
+```
+
+**Fedora**
+```bash
+sudo dnf install -y @development-tools git meson ninja-build pkgconf-pkg-config python3-gobject gtk4 libadwaita libinput-utils
+```
+
+Notes:
+- GUI requires **libadwaita ≥ 1.4**; on older distros the CLI still works.
+- `libinput-tools`/`libinput-utils` are optional but recommended for `wsf doctor`.
+- If you only need the CLI, you can skip GTK/libadwaita packages.
+
+---
+
 ## Quick install (one‑shot)
 
 This script attempts to:
