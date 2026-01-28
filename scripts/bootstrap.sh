@@ -8,25 +8,25 @@ install_deps() {
   if command -v apt-get >/dev/null 2>&1; then
     sudo apt-get update
     sudo apt-get install -y build-essential meson ninja-build pkg-config git \
-      python3 python3-gi libgtk-4-1 libadwaita-1-0 libinput-tools
+      python3 python3-gi libgtk-4-1 libadwaita-1-0 libinput-utils
     return 0
   fi
 
   if command -v dnf >/dev/null 2>&1; then
     sudo dnf install -y gcc gcc-c++ make meson ninja-build pkgconf-pkg-config git \
-      python3 python3-gobject gtk4 libadwaita libinput-tools
+      python3 python3-gobject gtk4 libadwaita libinput-utils
     return 0
   fi
 
   if command -v pacman >/dev/null 2>&1; then
     sudo pacman -S --needed base-devel meson ninja pkgconf git \
-      python python-gobject gtk4 libadwaita libinput-tools
+      python python-gobject gtk4 libadwaita libinput-utils
     return 0
   fi
 
   if command -v zypper >/dev/null 2>&1; then
     sudo zypper install -y gcc gcc-c++ make meson ninja pkg-config git \
-      python3 python3-gobject gtk4 libadwaita-1-0 libinput-tools
+      python3 python3-gobject gtk4 libadwaita-1-0 libinput-utils
     return 0
   fi
 
